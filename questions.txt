@@ -1,0 +1,24 @@
+1. What is difference between Pros & State
+
+Props
+    Immutable: Props are immutable, meaning they cannot be changed by the component that receives them. They are read-only.
+    Passed from Parent to Child: Props are passed from a parent component to a child component.
+    Used for Data Flow: Props are primarily used to pass data and event handlers down the component tree.
+    Child Components: Props allow child components to interact with parent components and communicate via callbacks.
+
+State
+    Mutable: State is mutable and can be changed by the component that owns it.
+    Managed Within Component: State is managed within the component itself and is used to store dynamic data.
+    Used for Interaction: State is used to handle component interactions and to maintain and update dynamic information.
+    Reactivity: Changes to state trigger a re-render of the component, allowing the UI to update in response to user interactions or other changes.
+
+
+Key Differences
+  Mutability: Props are immutable, while state is mutable.
+  Origin: Props are passed from parent to child, while state is managed and maintained within the component.
+  Purpose: Props are used for passing data and methods, while state is used for storing and managing component-specific data that may change over time.
+
+
+2. How to pass data from parent to child and Child to parent;
+  - Using Props pass data from parent to child.
+  - Using callbacks as props we can pass data from child to parent.

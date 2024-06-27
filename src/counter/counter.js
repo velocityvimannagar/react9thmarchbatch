@@ -1,10 +1,22 @@
+import { useState } from "react";
+
 export function Counter(props){
-    console.log(props)
-    const age = 50;
+    // const [variable, settter] = useState(initialValue);
+     let [count, setCount] = useState(0);
+    // let count = 0;
+    // State => Is local data of component, When state changes the component re-render.
+    const increment = () =>{
+        // console.log("Current Count", count);
+        const updatedCount= count+1
+        setCount(updatedCount)
+        console.log("Updated Count", updatedCount);
+        props.onCountChange(updatedCount)
+    }
     return <div id="counter-component">
-        <p>Counter Component</p>
-        <p>{`${props.greeting} ${props.name}`}</p>
-        <p>My Age is: {age}</p>
+        <p>Counter Component: {props.counterName}</p>
+        Count: {count}
+        <br></br><br></br>
+        <button onClick={increment}>Increment</button>
     </div>
 }
 
