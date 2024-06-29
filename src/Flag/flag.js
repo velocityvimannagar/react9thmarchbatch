@@ -15,6 +15,7 @@ export function Flag() {
         return  <button onClick={handler}>{buttonName}</button>
     }
     return <div>
+        {console.log("Refreshed")}
         {/* I am {isOnline? 'Online': 'Offline'} */}
         {isOnline? <p>I am Online</p>:<p>I am Offline</p>}
         <br></br>

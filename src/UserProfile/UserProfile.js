@@ -12,8 +12,8 @@ export function UserProfile(user){
     const [isLoading, setIsLoading]  = useState(false);
     return !isLoading &&  <div>
         <p>Name: {user.firstName}  {user.lastName}</p>
-        <p>Age: {user.age}</p>
+        {/* <p>Age: {user.age}</p>
         { user.isAdmin && <p>Gender: {user.gender}</p>}
-        {user.isAdmin? <p>I am an Admin</p>:<p>I am not an Admin</p>}
+        {user.isAdmin? <p>I am an Admin</p>:<p>I am not an Admin</p>} */}
     </div>
 }

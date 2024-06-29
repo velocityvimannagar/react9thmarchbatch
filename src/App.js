@@ -22,8 +22,8 @@ function App() {
         {/* <Counter counterName="Counter2"></Counter>
         <hr></hr> */}
         {/* <Flag></Flag>
-        <hr></hr>
-        <UserProfile></UserProfile>
+        <hr></hr> */}
+        {/* <UserProfile></UserProfile>
         <hr></hr> */}
         {/* <TodoList></TodoList>
         <hr></hr> */}
