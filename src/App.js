@@ -8,7 +8,7 @@ import { Counter } from './counter/counter';
 
 function App() {
   const onCallback = (count) =>{
-    console.log('Data From Child', count)
+    console.log('Data From Child', count);
   }
   return (
     <div className="App">

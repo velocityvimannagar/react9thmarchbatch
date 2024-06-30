@@ -1,7 +1,8 @@
 import { useState } from "react"
-import { UserProfile } from "./UserProfile"
+import { UserProfile } from "./UserProfile";
+import "./UserList.css"
 
-export function UsersList(){
+export function UsersList() {
     const [users, setUsers] = useState([
         {
             id: '1',
@@ -27,17 +28,17 @@ export function UsersList(){
             gender: "Famale",
             isAdmin: true
         }
-    ] );
+    ]);
 
     const [formValues, setFormValues] = useState({
         firstName: '',
         lastName: ''
     })
-    const onInputChange = (e) =>{
+    const onInputChange = (e) => {
         console.log(e.target.value, e.target.name)
         formValues[e.target.name] = e.target.value;
-        setFormValues({...formValues})
-    } 
+        setFormValues({ ...formValues })
+    }
     // const [firstName, setFirstName ] = useState("");
     // const [lastName, setLastName ] = useState("");
     // const onFirstNameChange = (e) =>{
@@ -46,7 +47,7 @@ export function UsersList(){
     // const onLastNameChange = (e) =>{
     //     setLastName(e.target.value)
     // }
-    const addUser = ()=>{
+    const addUser = () => {
         // console.log(firstName, lastName)
         // users.push({
         //     "id": users.length+1,
@@ -58,7 +59,7 @@ export function UsersList(){
         // setFirstName('');
         // setLastName('');
         users.push({
-            "id": users.length+1,
+            "id": users.length + 1,
             "firstName": formValues.firstName,
             "lastName": formValues.lastName,
         })
@@ -68,21 +69,34 @@ export function UsersList(){
             lastName: ''
         })
     }
+    const onDelete = (id) =>{
+        // alert(id)
+        const filteredUsers = users.filter(user=> {
+            return user.id !== id;
+        });
+        setUsers([...filteredUsers])
+    }
     return <div>
         {/* <UserProfile firstName="Priyanka" lastName="Pandya" age={40} gender="Female" isAdmin={true}></UserProfile>
         <hr></hr>
         <UserProfile firstName="Hardik" lastName="Pandya" age={40} gender="Male" isAdmin={false}></UserProfile> */}
         {/* <input placeholder="First Name" value={firstName} onChange={onFirstNameChange}></input>
         <input placeholder="Last Name" value={lastName} onChange={onLastNameChange}></input> */}
-         <input name="firstName" placeholder="First Name" value={formValues.firstName} onChange={onInputChange}></input>
+        <input name="firstName" placeholder="First Name" value={formValues.firstName} onChange={onInputChange}></input>
         <input name="lastName" placeholder="Last Name" value={formValues.lastName} onChange={onInputChange}></input>
         <br></br>
-        <button onClick={addUser}>Add User</button>
-        {users.map(user=>{
-            return <div key={user.id}>
-                <UserProfile firstName={user.firstName} lastName={user.lastName} age={user.age} gender={user.gender} isAdmin={user.isAdmin}></UserProfile> 
-                <hr></hr>
-                </div>
+        <button className="myButton" onClick={addUser}>Add User</button>
+        <div className="user-list-container">
+        {users.map(user => {
+            return <div key={user.id} style={{ backgroundColor: 'blue', color: 'white', width: '200px' }}>
+                <UserProfile onDelete={()=>{
+                    onDelete(user.id)
+                }} firstName={user.firstName} lastName={user.lastName} age={user.age} gender={user.gender} isAdmin={user.isAdmin}></UserProfile>
+                {/* <button onClick={()=>{
+                    onDelete(user.id)
+                }}>Delete</button> */}
+            </div>
         })}
+        </div>
     </div>
 }
