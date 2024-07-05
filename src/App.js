@@ -1,10 +1,13 @@
 import './App.css';
 import { Flag } from './Flag/flag';
 import { FormExample } from './FormExample';
+import { FormikExample } from './FormikExample';
 import { Greeting } from './Greeting';
+import { ImageCarasoul } from './ImageCarasoul/ImageCarasoul';
 import { TodoList } from './TodoList/TodoList';
 import { UsersList } from './UserProfile/UserList';
 import { UserProfile } from './UserProfile/UserProfile';
+import { ContextExample } from './context/ContextExample';
 import { Counter } from './counter/counter';
 
 function App() {
@@ -30,7 +33,12 @@ function App() {
         <hr></hr> */}
         {/* <UsersList></UsersList>
         <hr></hr> */}
-        <FormExample></FormExample>
+        {/* <FormExample></FormExample>
+        <hr></hr> */}
+        {/* <FormikExample></FormikExample>
+        <hr></hr> */}
+        {/* <ImageCarasoul></ImageCarasoul> */}
+        <ContextExample></ContextExample>
     </div>
   );
 }
