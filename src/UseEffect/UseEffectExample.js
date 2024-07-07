@@ -7,11 +7,9 @@ export function UseEffectExample({name}){
     // Syntax
     // useEffect(()=>{}, [])
 
-    
+
     // Example:1 Without dependency array. This effect is executed on every component render.
-    useEffect(()=>{
-        console.log('1. This is executed on every render');
-    })
+
 
     //Example2: With empty dependency array
     useEffect(()=>{

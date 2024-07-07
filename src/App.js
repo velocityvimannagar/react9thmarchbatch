@@ -11,6 +11,7 @@ import { UsersList } from './UserProfile/UserList';
 import { UserProfile } from './UserProfile/UserProfile';
 import { ContextExample } from './context/ContextExample';
 import { Counter } from './counter/counter';
+import { UserCrudWrapper } from './UserCrud/UserCrudWrapper';
 
 function App() {
   const [name, setName] = useState("Rohit");
@@ -43,8 +44,9 @@ function App() {
         {/* <ImageCarasoul></ImageCarasoul> */}
         {/* <ContextExample></ContextExample>
         <hr></hr> */}
-        <UseEffectExample name={name}></UseEffectExample>
-        <button onClick={()=>setName(name+Math.random()*10)}>Change Name Prop</button>
+        {/* <UseEffectExample name={name}></UseEffectExample>
+        <button onClick={()=>setName(name+Math.random()*10)}>Change Name Prop</button> */}
+        <UserCrudWrapper></UserCrudWrapper>
     </div>
   );
 }

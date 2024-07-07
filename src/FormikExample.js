@@ -1,7 +1,8 @@
 import { Formik, Field, Form } from 'formik';
 import "./FormExample.css"
 
-export function FormikExample() {
+export function FormikExample(props) {
+
     return <div>
         <Formik
             initialValues={{
@@ -12,6 +13,8 @@ export function FormikExample() {
             }}
             onSubmit={(values) => {
                 console.log("Submitted values", values)
+                // API Call - Create call
+                props.getData(values)
             }}
         >
             <Form>
