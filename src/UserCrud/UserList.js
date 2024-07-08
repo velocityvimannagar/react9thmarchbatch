@@ -1,4 +1,4 @@
-export function UserList({usersList, onUserDelete}){
+export function UserList({usersList, onUserDelete, onUserUpdate}){
     return <table>
     <thead>
         <th>Name</th>
@@ -13,7 +13,9 @@ export function UserList({usersList, onUserDelete}){
                 <td>{user.email}</td>
                 <td>{user.mobile}</td>
                 <td>
-                    <button>Update</button>
+                    <button onClick={()=>{
+                        onUserUpdate(user)
+                    }}>Update</button>
                     <button onClick={()=>{
                         onUserDelete(user.id)
                     }}>Delete</button>

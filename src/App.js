@@ -12,6 +12,7 @@ import { UserProfile } from './UserProfile/UserProfile';
 import { ContextExample } from './context/ContextExample';
 import { Counter } from './counter/counter';
 import { UserCrudWrapper } from './UserCrud/UserCrudWrapper';
+import { TicTacToe } from './tictactoe/TicTacToe';
 
 function App() {
   const [name, setName] = useState("Rohit");
@@ -46,7 +47,8 @@ function App() {
         <hr></hr> */}
         {/* <UseEffectExample name={name}></UseEffectExample>
         <button onClick={()=>setName(name+Math.random()*10)}>Change Name Prop</button> */}
-        <UserCrudWrapper></UserCrudWrapper>
+        {/* <UserCrudWrapper></UserCrudWrapper> */}
+        <TicTacToe></TicTacToe>
     </div>
   );
 }
