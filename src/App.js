@@ -13,42 +13,66 @@ import { ContextExample } from './context/ContextExample';
 import { Counter } from './counter/counter';
 import { UserCrudWrapper } from './UserCrud/UserCrudWrapper';
 import { TicTacToe } from './tictactoe/TicTacToe';
+import { Link, Route, Routes, useNavigate } from 'react-router-dom';
 
 function App() {
+  const navigate = useNavigate();
   const [name, setName] = useState("Rohit");
-  const onCallback = (count) =>{
+  const onCallback = (count) => {
     console.log('Data From Child', count);
   }
   return (
     <div className="App">
-        {/* <p>App Component</p>
+      <div className='header'>Header Component</div>
+      <div className='container-body'>
+        <div className='sidebar'>
+          <Link to={"/"}>Home</Link>
+          <Link to={"/counter-path"}>Counter</Link>
+          <Link to={"/users"}>Users</Link>
+          {/* <Link to={"/greeting-path"}>Greeting</Link> */}
+          <button onClick={() => {
+            navigate("/greeting-path")
+          }}>Greeting</button>
+        </div>
+        <div className="content">
+          <Routes>
+            <Route path='/' element={<div>Content Div</div>}></Route>
+            <Route path='/counter-path' element={<Counter></Counter>}></Route>
+            <Route path='/greeting-path' element={<Greeting name="Virat" greeting="Hi"></Greeting>}></Route>
+            <Route path="/users/*" element={<UserCrudWrapper></UserCrudWrapper>}> </Route>
+            <Route path='*' element={<div>This url is not mapped</div>}></Route>
+          </Routes>
+        </div>
+      </div>
+
+      {/* <p>App Component</p>
         <p>This is react application.</p>
         <hr></hr> */}
-        {/* <Greeting name="Virat" greeting="Hi"></Greeting>
+      {/* <Greeting name="Virat" greeting="Hi"></Greeting>
         <hr></hr> */}
-        {/* <Counter counterName={5} onCountChange={onCallback}></Counter>
+      {/* <Counter counterName={5} onCountChange={onCallback}></Counter>
         <hr></hr> */}
-        {/* <Counter counterName="Counter2"></Counter>
+      {/* <Counter counterName="Counter2"></Counter>
         <hr></hr> */}
-        {/* <Flag></Flag>
+      {/* <Flag></Flag>
         <hr></hr> */}
-        {/* <UserProfile></UserProfile>
+      {/* <UserProfile></UserProfile>
         <hr></hr> */}
-        {/* <TodoList></TodoList>
+      {/* <TodoList></TodoList>
         <hr></hr> */}
-        {/* <UsersList></UsersList>
+      {/* <UsersList></UsersList>
         <hr></hr> */}
-        {/* <FormExample></FormExample>
+      {/* <FormExample></FormExample>
         <hr></hr> */}
-        {/* <FormikExample></FormikExample>
+      {/* <FormikExample></FormikExample>
         <hr></hr> */}
-        {/* <ImageCarasoul></ImageCarasoul> */}
-        {/* <ContextExample></ContextExample>
+      {/* <ImageCarasoul></ImageCarasoul> */}
+      {/* <ContextExample></ContextExample>
         <hr></hr> */}
-        {/* <UseEffectExample name={name}></UseEffectExample>
+      {/* <UseEffectExample name={name}></UseEffectExample>
         <button onClick={()=>setName(name+Math.random()*10)}>Change Name Prop</button> */}
-        {/* <UserCrudWrapper></UserCrudWrapper> */}
-        <TicTacToe></TicTacToe>
+      {/* <UserCrudWrapper></UserCrudWrapper> */}
+      {/* <TicTacToe></TicTacToe> */}
     </div>
   );
 }
