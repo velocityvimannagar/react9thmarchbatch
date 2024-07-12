@@ -1,0 +1,16 @@
+- Redux - Centralized store
+- Store is basically an object.
+
+reducer/store = {
+    users: [],
+    posts: [],
+    counter: {
+        count: 0
+    }
+}
+
+Difference between Context and Redux
+- We can debug redux state changes.
+- We can't debug value change of context.
+- We have developer tools.
+- Redux can have middlewares.

@@ -14,6 +14,7 @@ import { Counter } from './counter/counter';
 import { UserCrudWrapper } from './UserCrud/UserCrudWrapper';
 import { TicTacToe } from './tictactoe/TicTacToe';
 import { Link, Route, Routes, useNavigate } from 'react-router-dom';
+import { ReduxStoreExample } from './redux-store/ReduxStoreExample';
 
 function App() {
   const navigate = useNavigate();
@@ -29,6 +30,8 @@ function App() {
           <Link to={"/"}>Home</Link>
           <Link to={"/counter-path"}>Counter</Link>
           <Link to={"/users"}>Users</Link>
+          <Link to={"/redux-example"}>Redux Example</Link>
+          <Link to={"/todo"}>Todo List</Link>
           {/* <Link to={"/greeting-path"}>Greeting</Link> */}
           <button onClick={() => {
             navigate("/greeting-path")
@@ -38,7 +41,9 @@ function App() {
           <Routes>
             <Route path='/' element={<div>Content Div</div>}></Route>
             <Route path='/counter-path' element={<Counter></Counter>}></Route>
+            <Route path='/todo' element={<TodoList></TodoList>}></Route>
             <Route path='/greeting-path' element={<Greeting name="Virat" greeting="Hi"></Greeting>}></Route>
+            <Route path='/redux-example' element={<ReduxStoreExample></ReduxStoreExample>}></Route>
             <Route path="/users/*" element={<UserCrudWrapper></UserCrudWrapper>}> </Route>
             <Route path='*' element={<div>This url is not mapped</div>}></Route>
           </Routes>
