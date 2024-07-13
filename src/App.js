@@ -15,6 +15,8 @@ import { UserCrudWrapper } from './UserCrud/UserCrudWrapper';
 import { TicTacToe } from './tictactoe/TicTacToe';
 import { Link, Route, Routes, useNavigate } from 'react-router-dom';
 import { ReduxStoreExample } from './redux-store/ReduxStoreExample';
+import { CustomHookExample } from './custom-hooks/CustomHookExample';
+import { AuthenticatedExampleComponent } from './hoc/HocExample';
 
 function App() {
   const navigate = useNavigate();
@@ -32,6 +34,8 @@ function App() {
           <Link to={"/users"}>Users</Link>
           <Link to={"/redux-example"}>Redux Example</Link>
           <Link to={"/todo"}>Todo List</Link>
+          <Link to={"/custom-hook"}>Custom hook</Link>
+          <Link to={"/hoc"}>HOC</Link>
           {/* <Link to={"/greeting-path"}>Greeting</Link> */}
           <button onClick={() => {
             navigate("/greeting-path")
@@ -44,6 +48,9 @@ function App() {
             <Route path='/todo' element={<TodoList></TodoList>}></Route>
             <Route path='/greeting-path' element={<Greeting name="Virat" greeting="Hi"></Greeting>}></Route>
             <Route path='/redux-example' element={<ReduxStoreExample></ReduxStoreExample>}></Route>
+            <Route path='/custom-hook' element={<CustomHookExample></CustomHookExample>}></Route>
+            <Route path='/hoc' element={<AuthenticatedExampleComponent></AuthenticatedExampleComponent>}></Route>
+
             <Route path="/users/*" element={<UserCrudWrapper></UserCrudWrapper>}> </Route>
             <Route path='*' element={<div>This url is not mapped</div>}></Route>
           </Routes>

@@ -10,12 +10,15 @@ export function ReduxStoreExample() {
         <br></br>
         <br></br>
         <hr></hr>
-        <ReduxUsersExample></ReduxUsersExample>
+        {/* <ReduxUsersExample></ReduxUsersExample> */}
     </Provider>
 }
 
 function ReduxCounterExample(){
-    const count = useSelector((state) => state.counter.count)
+    const count = useSelector((state) => {
+        console.log("dd", state)
+        return  state.counter.count
+    })
     const dispatch = useDispatch()
 
 

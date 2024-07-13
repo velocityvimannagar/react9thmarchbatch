@@ -1,0 +1,2 @@
+- A way to reuse stateful logic.
+- Its a function but with stateful logic.

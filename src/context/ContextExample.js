@@ -7,7 +7,7 @@ export function ContextExample() {
     return <div>
         Parent Component: {theme}
         <MyContext.Provider value={theme}>
-            <ChildComponent ></ChildComponent>
+            <ChildComponent></ChildComponent>
         </MyContext.Provider>
         <button onClick={()=>{
             setTheme(theme=='light'? 'dark': 'light')

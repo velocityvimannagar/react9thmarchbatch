@@ -1,6 +1,8 @@
 import { useState } from "react"
+import { useOnlineStatus } from "../custom-hooks/UseOnlineStatus";
 
 export function TodoList() {
+    const isOnline = useOnlineStatus();
     const [todos, setTodos] = useState([{ taskId: 1, name: "Task1" }, { taskId: 2, name: "Task2" }, { taskId: 3, name: "Task3" }])
     const [text, setText ] = useState("")
     // const getTodos = () => {

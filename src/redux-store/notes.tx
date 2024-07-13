@@ -1,7 +1,7 @@
 - Redux - Centralized store
 - Store is basically an object.
 
-reducer/store = {
+state = {
     users: [],
     posts: [],
     counter: {
