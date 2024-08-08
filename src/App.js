@@ -17,6 +17,8 @@ import { Link, Route, Routes, useNavigate } from 'react-router-dom';
 import { ReduxStoreExample } from './redux-store/ReduxStoreExample';
 import { CustomHookExample } from './custom-hooks/CustomHookExample';
 import { AuthenticatedExampleComponent } from './hoc/HocExample';
+import { CounterClass } from './counter/counter-class';
+import { ClassLifecycle } from './UseEffect/ClassLifecycle';
 
 function App() {
   const navigate = useNavigate();
@@ -43,8 +45,11 @@ function App() {
         </div>
         <div className="content">
           <Routes>
-            <Route path='/' element={<div>Content Div</div>}></Route>
-            <Route path='/counter-path' element={<Counter></Counter>}></Route>
+            <Route path='/' element={<div>Content Div
+              <ClassLifecycle></ClassLifecycle>
+
+            </div>}></Route>
+            <Route path='/counter-path' element={<CounterClass counterName="My Counter"></CounterClass>}></Route>
             <Route path='/todo' element={<TodoList></TodoList>}></Route>
             <Route path='/greeting-path' element={<Greeting name="Virat" greeting="Hi"></Greeting>}></Route>
             <Route path='/redux-example' element={<ReduxStoreExample></ReduxStoreExample>}></Route>
@@ -85,6 +90,7 @@ function App() {
         <button onClick={()=>setName(name+Math.random()*10)}>Change Name Prop</button> */}
       {/* <UserCrudWrapper></UserCrudWrapper> */}
       {/* <TicTacToe></TicTacToe> */}
+
     </div>
   );
 }

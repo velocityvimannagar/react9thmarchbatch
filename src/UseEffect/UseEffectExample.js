@@ -4,6 +4,7 @@ export function UseEffectExample({name}){
     const [counter, seCounter] = useState(0);
     const [counter2, seCounter2] = useState(0);
 
+
     // Syntax
     // useEffect(()=>{}, [])
 
@@ -15,6 +16,9 @@ export function UseEffectExample({name}){
     useEffect(()=>{
         console.log('2. This is executed only once when component is rendered.');
         // API Call
+        return ()=>{
+            console.log('I am cleaning up component')
+        }
     }, [])
 
      //Example3: With dependency array
