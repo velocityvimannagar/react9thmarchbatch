@@ -3,7 +3,9 @@ import React from "react";
 export class ClassLifecycle extends React.Component{
     constructor(props){
        super(props)
-       this.state = {}
+       this.state = {
+        someVar: 5
+       }
         console.log('Constructor')
     }
 
@@ -30,6 +32,9 @@ export class ClassLifecycle extends React.Component{
     }
     shouldComponentUpdate(nextProps, nextState) {
         console.log("shouldComponentUpdate")
+        // if(prevProps.someVar === nextProps.someVar){
+        //     return false;
+        // }
         return true;
     }
     getSnapshotBeforeUpdate(prevProps, prevState) {
@@ -52,25 +57,25 @@ export class ClassLifecycle extends React.Component{
 }
 
 
-/** 
- * Phases
- * 1. Mounting
- *    constructor
- *    getDerivedStateFromProps
- *    render
- *    componentDidMount
- *    
- * 2. Updating
- *    getDerivedStateFromProps
- *    shouldComponentUpdate
- *    render
- *    getSnapshotBeforeUpdate(prevProps, prevState)
- *    componentDidUpdate(prevProps, prevState, snapshot)
- * 
- * 3. UnMounting
- *    componentWillUnmount
- * 
- * 4. Error
- *   componentDidCatch
- *   getDerivedStateFromError
- * */ 
+
+//   Phases
+//   1. Mounting
+//      constructor
+//      getDerivedStateFromProps
+//      render
+//      componentDidMount
+     
+//   2. Updating
+//      getDerivedStateFromProps
+//      shouldComponentUpdate
+//      render
+//      getSnapshotBeforeUpdate(prevProps, prevState)
+//      componentDidUpdate(prevProps, prevState, snapshot)
+  
+//   3. UnMounting
+//      componentWillUnmount
+  
+//   4. Error
+//     componentDidCatch
+//     getDerivedStateFromError
+  

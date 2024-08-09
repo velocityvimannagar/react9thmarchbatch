@@ -19,6 +19,9 @@ import { CustomHookExample } from './custom-hooks/CustomHookExample';
 import { AuthenticatedExampleComponent } from './hoc/HocExample';
 import { CounterClass } from './counter/counter-class';
 import { ClassLifecycle } from './UseEffect/ClassLifecycle';
+import { ReactMemoExample } from './optimization/MemoExample';
+import { UseMemoExample } from './optimization/UseMemoExample';
+import { MemoizedCounter } from './optimization/UseCallbackExample';
 
 function App() {
   const navigate = useNavigate();
@@ -29,6 +32,15 @@ function App() {
   return (
     <div className="App">
       <div className='header'>Header Component</div>
+      {/* <ReactMemoExample></ReactMemoExample> */}
+      <br></br>
+      <br></br>
+
+      <MemoizedCounter></MemoizedCounter>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
       <div className='container-body'>
         <div className='sidebar'>
           <Link to={"/"}>Home</Link>
